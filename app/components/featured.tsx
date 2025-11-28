@@ -1,31 +1,54 @@
 "use client";
+import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
-import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Register the module
 
 // Import CSS
 import "swiper/css";
+
 export default function Featured() {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section className="py-10 px-4 md:px-10 lg:px-20 bg-linear-to-b from-black via-blue-950 to-black text-white">
       {/* <Trusted /> */}
 
       <div className="mt-16">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center text-6xl m-10"
-        >
+        <h1 ref={titleRef} className="text-center text-6xl m-10">
           Our Featured Cars
-        </motion.h1>
+        </h1>
         <CarList />
       </div>
     </section>
@@ -34,6 +57,45 @@ export default function Featured() {
 
 export function Trusted() {
   SwiperCore.use([Autoplay]);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const swiperRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        swiperRef.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: swiperRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   const brands = [
     { name: "Fiat", img: "/brands/fiat.png" },
     { name: "Ford", img: "/brands/ford.png" },
@@ -45,22 +107,11 @@ export function Trusted() {
 
   return (
     <section className="py-10 text-center">
-      <motion.h1
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-2xl md:text-3xl font-bold mb-6"
-      >
+      <h1 ref={titleRef} className="text-2xl md:text-3xl font-bold mb-6">
         OUR TRUSTED BRANDS & SUPPLIERS
-      </motion.h1>
+      </h1>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
+      <div ref={swiperRef}>
         <Swiper
           modules={[Autoplay, FreeMode]}
           spaceBetween={20}
@@ -86,7 +137,7 @@ export function Trusted() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -104,17 +155,24 @@ export function CarCard({
     image: string;
   };
 }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleHover = (isHovering: boolean) => {
+    gsap.to(cardRef.current, {
+      scale: isHovering ? 1.05 : 1,
+      boxShadow: isHovering
+        ? "0px 10px 30px rgba(30, 58, 138, 0.5)"
+        : "0px 4px 6px rgba(0, 0, 0, 0.1)",
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
+
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, scale: 0.9 },
-        visible: { opacity: 1, scale: 1 },
-      }}
-      whileHover={{
-        scale: 1.05,
-        boxShadow: "0px 10px 30px rgba(30, 58, 138, 0.5)",
-      }}
-      transition={{ duration: 0.3 }}
+    <div
+      ref={cardRef}
+      onMouseEnter={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
       className="max-w-sm bg-black rounded-2xl shadow-lg border-2 border-blue-800 shadow-blue-900 overflow-hidden cursor-pointer"
     >
       {/* Car Image */}
@@ -148,7 +206,7 @@ export function CarCard({
           Buy Now
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -238,17 +296,47 @@ export function CarList() {
     },
   ];
 
+  const gridRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cardsRef.current,
+        { opacity: 0, scale: 0.9 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 80%",
+            end: "top 30%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ staggerChildren: 0.1 }}
+    <div
+      ref={gridRef}
       className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6"
     >
       {cars.map((car, index) => (
-        <CarCard key={index} car={car} />
+        <div
+          key={index}
+          ref={(el) => {
+            cardsRef.current[index] = el;
+          }}
+        >
+          <CarCard car={car} />
+        </div>
       ))}
-    </motion.div>
+    </div>
   );
 }
