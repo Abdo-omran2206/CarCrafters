@@ -1,8 +1,24 @@
+@font-face {
+  font-family: "OrbitronLocal";
+  src: url("/fonts/Orbitron/Orbitron-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 ;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Tailwind import */
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --font-geist-sans: 'OpenSans', Arial, Helvetica, sans-serif;
+  --font-geist-mono: 'OrbitronLocal', monospace;
 }
 
 @theme inline {
@@ -14,13 +30,34 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
+/* Hide scrollbar for Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Prevent scrolling entirely (optional) */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, button, li , span{
+  font-family: "OrbitronLocal", monospace;
+}
+button {
+  cursor: pointer;
+}
+p {
+  font-family: 'OpenSans', Arial, Helvetica, sans-serif;
 }
