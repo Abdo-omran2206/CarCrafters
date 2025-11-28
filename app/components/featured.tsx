@@ -162,7 +162,7 @@ export function CarList() {
       year: 2022,
       mileage: 15000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg.png",
     },
     {
       name: "Toyota Corolla",
@@ -171,7 +171,7 @@ export function CarList() {
       year: 2021,
       mileage: 20000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (1).png",
     },
     {
       name: "Hyundai Elantra",
@@ -180,7 +180,7 @@ export function CarList() {
       year: 2020,
       mileage: 30000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (2).png",
     },
     {
       name: "Kia Cerato",
@@ -189,7 +189,7 @@ export function CarList() {
       year: 2019,
       mileage: 42000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (3).png",
     },
     {
       name: "BMW 320i",
@@ -198,7 +198,7 @@ export function CarList() {
       year: 2018,
       mileage: 60000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (4).png",
     },
     {
       name: "Mercedes C200",
@@ -207,7 +207,7 @@ export function CarList() {
       year: 2017,
       mileage: 72000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (5).png",
     },
     {
       name: "Audi A4",
@@ -216,7 +216,7 @@ export function CarList() {
       year: 2019,
       mileage: 38000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (6).png",
     },
     {
       name: "Ford Mustang",
@@ -225,7 +225,7 @@ export function CarList() {
       year: 2020,
       mileage: 25000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (7).png",
     },
     {
       name: "Nissan Altima",
@@ -234,7 +234,7 @@ export function CarList() {
       year: 2021,
       mileage: 18000,
       fuel: "Gasoline",
-      image: "/whyus-car.png",
+      image: "/garage/pngegg (8).png",
     },
   ];
 
