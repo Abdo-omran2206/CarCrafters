@@ -32,7 +32,7 @@ export default function About() {
             }}
           >
             <h1 className="text-4xl md:text-7xl font-bold mb-4">
-              About CarCreator
+              About CarCrafters
             </h1>
             <h4 className="text-xl md:text-md mb-6 font-semibold">
               Your Trusted Partner in Finding the Perfect Vehicle
@@ -48,7 +48,7 @@ export default function About() {
             }}
             className="text-lg md:text-xl leading-relaxed max-w-3xl"
           >
-            At CarCreator, we&apos;re revolutionizing the way people buy cars.
+            At CarCrafters, we&apos;re revolutionizing the way people buy cars.
             With thousands of quality vehicles and a commitment to transparency,
             we make car shopping simple, safe, and satisfying. Whether
             you&apos;re looking for your first car or upgrading to your dream
@@ -98,7 +98,7 @@ export function WhyUs() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-white mb-0 "
         >
-          Why Choose CarCreator
+          Why Choose CarCrafters
         </motion.h1>
       </div>
 
