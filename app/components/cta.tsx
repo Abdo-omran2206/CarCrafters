@@ -38,7 +38,7 @@ export default function Cta() {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-bold drop-shadow-xl"
+          className="text-4xl md:text-6xl font-bold drop-shadow-xl"
         >
           Which One Would You Drive?
         </motion.h1>
@@ -55,7 +55,7 @@ export default function Cta() {
             }}
             whileTap={{ scale: 0.95 }}
             className="
-  px-20 py-3
+  px-10 md:px-20 py-3
   bg-linear-to-r from-blue-600 to-blue-800
   hover:from-blue-700 hover:to-blue-900
   rounded-full

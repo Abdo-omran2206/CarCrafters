@@ -25,18 +25,19 @@ export default function Footer() {
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
+          className="order-2 md:order-1"
         >
           <h2 className="text-white text-xl font-semibold mb-3">
             Navigation Links
           </h2>
 
-          <ul className="flex flex-col gap-4 text-white text-lg font-medium">
+          <ul className="flex flex-col gap-4 text-white text-lg font-medium items-center md:items-start">
             {["Home", "About", "Featured Cars", "Contact"].map(
               (item, index) => (
                 <motion.li
                   key={index}
                   whileHover={{ x: 5, color: "#60a5fa" }}
-                  className="relative pl-4 before:content-['>'] before:absolute before:left-0 before:text-blue-400 cursor-pointer transition-colors"
+                  className="relative md:pl-4 md:before:content-['>'] md:before:absolute md:before:left-0 md:before:text-blue-400 cursor-pointer transition-colors"
                 >
                   {item}
                 </motion.li>
@@ -51,7 +52,7 @@ export default function Footer() {
             hidden: { opacity: 0, scale: 0.8 },
             visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
           }}
-          className="flex flex-col justify-center items-center gap-4"
+          className="flex flex-col justify-center items-center gap-4 order-1 md:order-2"
         >
           <Image
             src="/logol.png"
@@ -71,7 +72,7 @@ export default function Footer() {
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
-          className="text-gray-300 text-sm leading-relaxed max-w-xs pl-20 mx-auto md:mx-0"
+          className="text-gray-300 text-sm leading-relaxed max-w-xs pl-0 md:pl-20 mx-auto md:mx-0 order-3 md:order-3"
         >
           <h2 className="text-white text-xl font-semibold mb-3">Contact</h2>
           <p>123 Main Street, Atlanta, GA 30301</p>

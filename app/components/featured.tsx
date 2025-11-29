@@ -22,7 +22,7 @@ export default function Featured() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center text-6xl m-10"
+          className="text-center text-4xl md:text-6xl "
         >
           Our Featured Cars
         </motion.h1>

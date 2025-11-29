@@ -102,16 +102,16 @@ export function WhyUs() {
         </motion.h1>
       </div>
 
-      <div className="relative z-10 flex flex-row items-center justify-between h-full ">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full ">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col gap-30 px-10 py-10 justify-around  text-white text-2xl font-semibold"
+          className="flex flex-col gap-10 md:gap-30 max-md:flex-row px-10 py-10 justify-around text-white text-2xl font-semibold"
         >
           <div className="text">
-            <span className="block text-7xl drop-shadow-[2px_2px_2px_black]">
+            <span className="block text-5xl md:text-7xl drop-shadow-[2px_2px_2px_black]">
               <CountUp
                 from={0}
                 to={100}
@@ -122,12 +122,12 @@ export function WhyUs() {
               />
               +
             </span>
-            <span className="drop-shadow-[2px_2px_2px_black]">
-              types of machines
+            <span className="drop-shadow-[2px_2px_2px_black] text-lg md:text-2xl">
+              machines
             </span>
           </div>
           <div>
-            <span className="block text-7xl drop-shadow-[2px_2px_2px_black]">
+            <span className="block text-5xl md:text-7xl drop-shadow-[2px_2px_2px_black]">
               <CountUp
                 from={0}
                 to={20}
@@ -138,7 +138,7 @@ export function WhyUs() {
               />
               K+
             </span>
-            <span className="drop-shadow-[2px_2px_2px_black]">
+            <span className="drop-shadow-[2px_2px_2px_black] text-lg md:text-2xl">
               client served
             </span>
           </div>
