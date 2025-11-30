@@ -11,9 +11,26 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-Latest-ff69b4?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
 
-[Live Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
+[Live Demo](https://carcrafters.netlify.app/) • [Report Bug](https://github.com/Abdo-omran2206/CarCrafters/issues) • [Request Feature](https://github.com/Abdo-omran2206/CarCrafters/issues)
 
 </div>
+
+---
+
+## 📖 About
+
+**CarCrafters** is a modern, premium car dealership and rental platform built with cutting-edge web technologies. The platform offers an immersive browsing experience with stunning animations, interactive 3D car previews, and a fully responsive design optimized for all devices.
+
+Whether you're looking to buy your dream car or rent a luxury vehicle, CarCrafters provides a seamless, visually engaging experience that sets it apart from traditional automotive websites.
+
+### 🎯 Key Highlights
+
+- ⚡ **Lightning Fast**: Built with Next.js 16 and optimized for maximum performance
+- 🎭 **Stunning Animations**: Powered by GSAP with ScrollTrigger for fluid, scroll-based animations
+- 🚀 **3D Interactive Previews**: Explore cars in immersive 3D with Three.js integration
+- 🎨 **Premium Design**: Modern dark theme with glassmorphism and vibrant accents
+- 📱 **Fully Responsive**: Perfect experience across desktop, tablet, and mobile devices
+- ♿ **Accessible**: WCAG compliant with semantic HTML
 
 ---
 
@@ -25,7 +42,7 @@
 
 ### 🎬 **Immersive Animations**
 
-Smooth, scroll-triggered animations powered by Framer Motion for a premium user experience
+Smooth, scroll-triggered animations powered by GSAP and ScrollTrigger for a premium user experience
 
 ### 🎨 **Modern Design**
 
@@ -42,9 +59,9 @@ Optimized for all devices - desktop, tablet, and mobile
 
 SPA-style navigation without page reloads for instant transitions
 
-### 🏎️ **Interactive Inventory**
+### 🏎️ **Interactive 3D Previews**
 
-Browse featured cars with hover effects and detailed specifications
+Explore cars in immersive 3D with Three.js-powered interactive models
 
 ### 🔄 **Auto-Scrolling Brands**
 
@@ -66,6 +83,7 @@ Showcase trusted automotive brands with seamless carousel
 | **Language**         | TypeScript                            |
 | **Styling**          | Tailwind CSS v4                       |
 | **Animations**       | Framer Motion + GSAP                  |
+| **3D Graphics**      | Three.js + React Three Fiber          |
 | **UI Components**    | Swiper, Custom Components             |
 | **Fonts**            | Orbitron (Headings), Open Sans (Body) |
 | **State Management** | React Hooks                           |
@@ -111,6 +129,7 @@ car-crafters/
 │   │   ├── hero.tsx        # Hero section with video
 │   │   ├── about.tsx       # About & Why Us sections
 │   │   ├── featured.tsx    # Featured cars grid
+│   │   ├── 3dPrev.tsx      # 3D car preview modal
 │   │   ├── cta.tsx         # Call to action
 │   │   └── footer.tsx      # Footer component
 │   ├── page.tsx            # Main page with SPA navigation
@@ -120,6 +139,7 @@ car-crafters/
 │   ├── garage/             # Car images
 │   ├── brands/             # Brand logos
 │   ├── fonts/              # Custom fonts
+│   ├── garage-3d/           # 3D car models
 │   └── *.jpg, *.mp4        # Media assets
 └── package.json
 ```
@@ -137,9 +157,11 @@ car-crafters/
 ### 🚗 Featured Cars
 
 - Grid layout with 9+ premium vehicles
-- Interactive hover effects
+- Interactive hover effects with smooth transitions
+- **Interactive 3D car previews** with Three.js
 - Detailed specifications (year, mileage, fuel type)
 - Dynamic pricing display
+- "View in 3D" button for supported models
 
 ### 🏢 About & Why Us
 
@@ -177,9 +199,68 @@ npm run lint
 
 - ⚡ **Lightning Fast**: Optimized with Next.js 16 and server components
 - 🎭 **Smooth Animations**: Framer Motion for fluid transitions
-- 🎨 **Premium UI**: Custom design with Tailwind CSS v4
+- 🚀 **3D Car Previews**: Interactive Three.js models with loading states and error handling
+- 🎨 **Premium UI**: Custom design with Tailwind CSS v4 and glassmorphism effects
 - 📊 **SEO Optimized**: Meta tags and semantic HTML
-- ♿ **Accessible**: WCAG compliant components
+- ♿ **Accessible**: WCAG compliant components with keyboard navigation
+
+---
+
+
+### Key Features Showcase
+
+- **🎥 Hero Section**: Full-screen video background with animated headlines
+- **🚗 Featured Cars Grid**: Interactive cards with hover effects and 3D preview buttons
+- **🎨 Glassmorphism Design**: Modern UI with smooth animations and transitions
+- **📱 Mobile Responsive**: Hamburger menu and optimized layouts for all screen sizes
+- **🌐 Brand Carousel**: Auto-scrolling showcase of trusted automotive brands
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Initial release with Next.js 16 and TypeScript
+- [x] framer-motion animations with
+- [x] 3D car preview integration with Three.js
+- [x] Fully responsive design across all devices
+- [ ] User authentication and profiles
+- [ ] Advanced search and filtering
+- [ ] Online booking system
+- [ ] Payment gateway integration
+- [ ] Admin dashboard for inventory management
+- [ ] Multi-language support
+
+---
+
+## 🚀 Deployment
+
+### Deploy to Netlify (Recommended)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Abdo-omran2206/CarCrafters)
+
+1. Click the button above or connect your GitHub repository to Netlify
+2. Configure build settings:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `.next`
+3. Deploy! ✨
+
+### Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Abdo-omran2206/CarCrafters)
+
+1. Click the button above or import your repository
+2. Vercel will automatically detect Next.js settings
+3. Deploy! 🚀
+
+### Manual Deployment
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
 
 ---
 
@@ -208,5 +289,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 <div align="center">
 
 ### ⭐ Star this repo if you found it helpful!
+
+Made by [Abdo Omran](https://github.com/Abdo-omran2206)
 
 </div>
