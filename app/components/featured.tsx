@@ -201,8 +201,8 @@ function CarCard({ car, index }: { car: Car; index: number }) {
             <span>{car.fuel}</span>
           </div>
 
-          <div className="mt-4 flex items-center justify-between gap-3">
-            <div>
+          <div className="mt-4 flex flex-col items-start sm:items-center sm:flex-row justify-between gap-3">
+            <div className="flex items-start flex-col">
               <p className="text-blue-400 text-xl font-semibold">
                 ${car.price}
               </p>
@@ -211,13 +211,14 @@ function CarCard({ car, index }: { car: Car; index: number }) {
               </p>
             </div>
 
-            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:gap-3 gap-3">
+            <div className="mt-4 flex flex-col items-center w-full sm:gap-3 gap-3">
               {car.modelPath && (
                 <button
                   onClick={() => set3DViewerOpen(true)}
                   className="
         flex-1 sm:flex-auto
-        py-2.5 px-4
+        py-2.5 px-6
+        w-full
         bg-gray-800 
         text-white text-sm font-medium
         rounded-lg
@@ -234,7 +235,8 @@ function CarCard({ car, index }: { car: Car; index: number }) {
               <button
                 className="
       flex-1 sm:flex-auto
-      py-2.5 px-4
+      py-2.5 px-8
+      w-full
       bg-blue-600 
       text-white text-sm font-semibold
       rounded-lg
