@@ -26,7 +26,7 @@ Whether you're looking to buy your dream car or rent a luxury vehicle, CarCrafte
 ### 🎯 Key Highlights
 
 - ⚡ **Lightning Fast**: Built with Next.js 16 and optimized for maximum performance
-- 🎭 **Stunning Animations**: Powered by GSAP with ScrollTrigger for fluid, scroll-based animations
+- 🎭 **Stunning Animations**: Powered by framer-motion with ScrollTrigger for fluid, scroll-based animations
 - 🚀 **3D Interactive Previews**: Explore cars in immersive 3D with Three.js integration
 - 🎨 **Premium Design**: Modern dark theme with glassmorphism and vibrant accents
 - 📱 **Fully Responsive**: Perfect experience across desktop, tablet, and mobile devices
@@ -42,7 +42,7 @@ Whether you're looking to buy your dream car or rent a luxury vehicle, CarCrafte
 
 ### 🎬 **Immersive Animations**
 
-Smooth, scroll-triggered animations powered by GSAP and ScrollTrigger for a premium user experience
+Smooth, scroll-triggered animations powered by framer-motion and ScrollTrigger for a premium user experience
 
 ### 🎨 **Modern Design**
 
@@ -82,7 +82,7 @@ Showcase trusted automotive brands with seamless carousel
 | **Framework**        | Next.js 16 (App Router)               |
 | **Language**         | TypeScript                            |
 | **Styling**          | Tailwind CSS v4                       |
-| **Animations**       | Framer Motion + GSAP                  |
+| **Animations**       | Framer Motion                         |
 | **3D Graphics**      | Three.js + React Three Fiber          |
 | **UI Components**    | Swiper, Custom Components             |
 | **Fonts**            | Orbitron (Headings), Open Sans (Body) |
