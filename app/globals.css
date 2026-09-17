@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "OrbitronLocal";
   src: url("/fonts/Orbitron/Orbitron-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 ;
@@ -9,7 +9,7 @@
   src: url("/fonts/Open_Sans/OpenSans-VariableFont.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
-}
+} */
 
 /* Tailwind import */
 @import "tailwindcss";
