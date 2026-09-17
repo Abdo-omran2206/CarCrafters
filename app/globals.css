@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: "OpenSans";
-  src: url("/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf") format("truetype");
+  src: url("/fonts/Open_Sans/OpenSans-VariableFont.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
